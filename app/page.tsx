@@ -1,26 +1,46 @@
-import { mockClaim } from "@/data/mock";
+"use client"
+
+import { useClaimData } from "@/hooks";
 import { cn } from "@/lib/cn";
 
 export default function Home() {
+  const { data, isLoading, isError } = useClaimData();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background p-8">
+        <p className="text-muted-foreground">Loading...</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="min-h-screen bg-background p-8">
+        <p className="text-destructive">Something went wrong.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background p-8 space-y-6">
       {/* Claim Header */}
       <div className="border border-border bg-card rounded-lg p-5">
         <p className="text-sm text-muted-foreground">File No</p>
         <h1 className="text-3xl font-medium text-foreground">
-          #{mockClaim.fileNo}
+          #{data?.fileNo}
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
-          {mockClaim.currentStatus}
+          {data?.currentStatus}
         </p>
         <p className="text-sm text-muted-foreground">
-          {mockClaim.estimatedRemainingTime} remaining
+          {data?.estimatedRemainingTime} remaining
         </p>
       </div>
 
       {/* Nodes */}
       <div className="space-y-3">
-        {mockClaim.processDetails.map((node) => (
+        {data?.processDetails.map((node) => (
           <div
             key={node.title}
             className="border border-border bg-card rounded-lg p-4"

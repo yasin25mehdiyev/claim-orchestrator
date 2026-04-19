@@ -1,16 +1,19 @@
-import { motion } from "framer-motion";
-import { StatusBadge } from "@/components/shared";
-import { Button } from "@/components/ui/button";
-import { ClaimNode } from "@/types";
-import { ChevronDown } from "lucide-react";
-import { ClaimNodeButton } from "./claim-node-button";
+import { motion } from "framer-motion"
+import { ChevronDown } from "lucide-react"
+
+import { ClaimNode } from "@/types"
+
+import { Typography } from "@/components/ui/typography"
+import { StatusBadge } from "@/components/shared"
+
+import { ClaimNodeButton } from "./claim-node-button"
 
 type ClaimNodeHeaderProps = {
-  node: ClaimNode;
-  index: number;
-  isExpanded: boolean;
-  onToggle: () => void;
-};
+  node: ClaimNode
+  index: number
+  isExpanded: boolean
+  onToggle: () => void
+}
 
 export function ClaimNodeHeader({
   node,
@@ -25,9 +28,9 @@ export function ClaimNodeHeader({
     >
       <div className="flex items-center gap-3">
         <ClaimNodeButton index={index} status={node.status} />
-        <span className="text-sm font-medium text-foreground">
+        <Typography variant="h6" weight="medium">
           {node.title}
-        </span>
+        </Typography>
       </div>
 
       <div className="flex items-center gap-3">
@@ -40,5 +43,5 @@ export function ClaimNodeHeader({
         </motion.div>
       </div>
     </div>
-  );
+  )
 }

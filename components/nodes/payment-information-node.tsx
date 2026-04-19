@@ -1,5 +1,7 @@
 import { PaymentInformationNode } from "@/types"
-import { FieldItem } from "@/components/shared"
+
+import { FieldGrid, FieldItem, AiAssistant } from "@/components/shared"
+import { Typography } from "@/components/ui/typography"
 
 type PaymentInformationNodeProps = {
   data: PaymentInformationNode
@@ -7,11 +9,17 @@ type PaymentInformationNodeProps = {
 
 export function PaymentInformationNodeComponent({ data }: PaymentInformationNodeProps) {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <FieldItem label="Paid To" value={data.paidTo} />
-      <FieldItem label="Payment Amount" value={data.paymentAmount} />
-      <FieldItem label="IBAN" value={data.iban} />
-      <FieldItem label="Note" value={data.note} />
+    <div className="space-y-4">
+      <FieldGrid>
+        <FieldItem label="Paid To" value={data.paidTo} />
+        <FieldItem label="Payment Amount" value={data.paymentAmount} />
+        <FieldItem label="Note" value={data.note} />
+      </FieldGrid>
+
+      <Typography variant="label">IBAN</Typography>
+      <Typography variant="mono" weight="medium">{data.iban}</Typography>
+      
+      <AiAssistant node={data} />
     </div>
   )
 }

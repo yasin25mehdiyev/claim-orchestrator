@@ -1,21 +1,23 @@
-import { ButtonVariant, statusVariantMap } from "@/components/shared/status-config";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonVariant, statusVariantMap } from "@/components/ui/button"
+import { Typography } from "@/components/ui/typography"
 
 type ClaimNodeButtonProps = {
-  index: number;
-  status: string;
-};
+  index: number
+  status: string
+}
 
 export function ClaimNodeButton({ index, status }: ClaimNodeButtonProps) {
-  const variant: ButtonVariant = statusVariantMap[status] ?? "pending";
+  const variant: ButtonVariant = statusVariantMap[status] ?? "pending"
 
   return (
     <Button
       variant={variant}
       size="icon-xs"
-      className="rounded-full text-xs font-medium pointer-events-none"
+      className="rounded-full pointer-events-none"
     >
-      {index + 1}
+      <Typography variant="span" weight="medium">
+        {index + 1}
+      </Typography>
     </Button>
-  );
+  )
 }

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn"
-import { Button } from "@/components/ui/button"
-import { statusVariantMap } from "@/components/shared/status-config"
+import { Button, statusVariantMap } from "@/components/ui/button"
 
 interface StatusBadgeProps {
   status: string

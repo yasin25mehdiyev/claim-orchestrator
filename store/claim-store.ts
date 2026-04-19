@@ -1,18 +1,16 @@
-import { StateCreator } from "zustand"
-import { ClaimSlice } from "@/types"
+import { StateCreator } from "zustand";
+import { ClaimSlice } from "@/types";
+
+import { updateSetItem } from "@/lib/set-utils";
 
 export const createClaimSlice: StateCreator<ClaimSlice> = (set) => ({
   expandedNodes: new Set<string>(),
   toggleNode: (nodeTitle) =>
-    set((state) => {
-      const next = new Set(state.expandedNodes)
-      next.has(nodeTitle) ? next.delete(nodeTitle) : next.add(nodeTitle)
-      return { expandedNodes: next }
-    }),
+    set((state) => ({
+      expandedNodes: updateSetItem(state.expandedNodes, nodeTitle),
+    })),
   setNodeExpanded: (nodeTitle, expanded) =>
-    set((state) => {
-      const next = new Set(state.expandedNodes)
-      expanded ? next.add(nodeTitle) : next.delete(nodeTitle)
-      return { expandedNodes: next }
-    }),
-})
+    set((state) => ({
+      expandedNodes: updateSetItem(state.expandedNodes, nodeTitle, expanded),
+    })),
+});

@@ -4,7 +4,7 @@ import { Claim } from "@/types"
 
 export const claimService = {
   getClaim: async (): Promise<Claim> => {
-    await new Promise((resolve) => setTimeout(resolve, 800))
+    await new Promise((resolve) => setTimeout(resolve, 1500))
     return ClaimSchema.parse(mockClaim)
   },
 }

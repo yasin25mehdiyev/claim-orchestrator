@@ -1,9 +1,10 @@
-import { Claim } from "@/types"
-import { Typography } from "@/components/ui/typography"
+import { Claim } from "@/types";
+
+import { Typography } from "@/components/ui/typography";
 
 type ClaimHeaderProps = {
-  claim: Claim
-}
+  claim: Claim;
+};
 
 export function ClaimHeader({ claim }: ClaimHeaderProps) {
   return (
@@ -21,13 +22,18 @@ export function ClaimHeader({ claim }: ClaimHeaderProps) {
 
         <div className="flex flex-col items-end gap-1">
           <div className="bg-status-action-bg border border-status-action-border rounded-lg px-3 py-1.5">
-            <Typography variant="p" weight="medium" className="text-status-action-text">
+            <Typography
+              variant="p"
+              weight="medium"
+              className="text-status-action-text"
+            >
               {claim.estimatedRemainingTime}
             </Typography>
           </div>
+
           <Typography variant="caption">estimated remaining</Typography>
         </div>
       </div>
     </div>
-  )
+  );
 }

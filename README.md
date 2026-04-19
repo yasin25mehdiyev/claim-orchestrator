@@ -2,6 +2,10 @@
 
 A high-performance, fully responsive dashboard built for an insurance company to transform their traditional claim tracking process into a proactive, self-service digital experience.
 
+## Live Demo
+
+🔗 [https://yasin25mehdiyev.github.io/claim-orchestrator/](https://yasin25mehdiyev.github.io/claim-orchestrator/)
+
 ---
 
 ## Getting Started
@@ -82,6 +86,7 @@ components/
 
 - **Real AI integration** — replace mock explanations with actual Anthropic/OpenAI API calls, streaming responses token by token
 - **AI Document Analyzer** — complete the Occupational Certificate upload flow with real file validation and AI-powered document analysis
+- **CI/CD pipeline** — GitHub Actions for automated build, type checking, and deployment to GitHub Pages with every push to main
 - **Optimistic updates** — dynamic node additions would update the UI instantly before server confirmation
 - **E2E testing** — Playwright tests for critical user flows (node expansion, AI explanation, dynamic node management)
 - **Accessibility** — full keyboard navigation, ARIA labels, and screen reader support for the stepper and accordion components
@@ -95,7 +100,6 @@ components/
 AI tools were used as a development accelerator — for bouncing architectural ideas, validating TypeScript patterns, and speeding up boilerplate. All design decisions, component structure, and implementation logic were reasoned through and owned by the developer.
 
 - **Claude (Anthropic)** — architectural discussions, TypeScript type system validation, and code review
-- **Cursor** — AI-augmented editor for faster implementation cycles
 
 ---
 

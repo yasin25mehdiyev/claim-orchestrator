@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 | Category           | Technology                     |
 | ------------------ | ------------------------------ |
-| Framework          | Next.js 14 (App Router)        |
+| Framework          | Next.js 16 (App Router)        |
 | Language           | TypeScript (strict)            |
 | Styling            | Tailwind CSS v4 + shadcn/ui    |
 | State Management   | Zustand (slice pattern)        |

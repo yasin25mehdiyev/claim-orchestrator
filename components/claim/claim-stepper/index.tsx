@@ -1,9 +1,9 @@
+import React from "react";
 import { ClaimNode } from "@/types";
 import { getStepStatus } from "@/lib/get-step-status";
 import { ClaimStepperDot } from "./claim-stepper-dot";
 import { ClaimStepperLine } from "./claim-stepper-line";
 import { ClaimStepperLabel } from "./claim-stepper-label";
-import React from "react";
 
 type ClaimStepperProps = {
   nodes: ClaimNode[];
@@ -16,7 +16,6 @@ export function ClaimStepper({ nodes }: ClaimStepperProps) {
     <div className="border border-border bg-card rounded-lg p-5">
       <div className="overflow-x-auto">
         <div className="min-w-[500px]">
-          {/* Dot-lar + Line-lar — Grid */}
           <div
             className="grid items-center"
             style={{

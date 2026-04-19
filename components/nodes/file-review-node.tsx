@@ -1,5 +1,6 @@
 import { FileReviewNode } from "@/types"
-import { FieldItem } from "@/components/shared"
+
+import { FieldGrid, FieldItem, AiAssistant } from "@/components/shared"
 
 type FileReviewNodeProps = {
   data: FileReviewNode
@@ -7,9 +8,13 @@ type FileReviewNodeProps = {
 
 export function FileReviewNodeComponent({ data }: FileReviewNodeProps) {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <FieldItem label="Review Referral Date" value={data.reviewReferralDate} />
-      <FieldItem label="Review Completion Date" value={data.reviewCompletionDate} />
+    <div className="space-y-4">
+      <FieldGrid>
+        <FieldItem label="Review Referral Date" value={data.reviewReferralDate} />
+        <FieldItem label="Review Completion Date" value={data.reviewCompletionDate} />
+      </FieldGrid>
+
+      <AiAssistant node={data} />
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import { buttonVariants } from "@/components/ui/button";
 import { VariantProps } from "class-variance-authority";
+import { buttonVariants } from "./button";
 
 export type ButtonVariant = NonNullable<
   VariantProps<typeof buttonVariants>["variant"]

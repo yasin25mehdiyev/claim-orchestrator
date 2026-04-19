@@ -1,16 +1,24 @@
-import { AppraisalNode } from "@/types"
-import { FieldItem } from "@/components/shared"
+import { AppraisalNode } from "@/types";
+
+import { FieldGrid, FieldItem, AiAssistant } from "@/components/shared";
 
 type AppraisalNodeProps = {
-  data: AppraisalNode
-}
+  data: AppraisalNode;
+};
 
 export function AppraisalNodeComponent({ data }: AppraisalNodeProps) {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <FieldItem label="Expert Assignment Date" value={data.expertAssignmentDate} />
-      <FieldItem label="Expert Info" value={data.expertInfo} />
-      <FieldItem label="Contact" value={data.contact} />
+    <div className="space-y-4">
+      <FieldGrid>
+        <FieldItem
+          label="Expert Assignment Date"
+          value={data.expertAssignmentDate}
+        />
+        <FieldItem label="Expert Info" value={data.expertInfo} />
+        <FieldItem label="Contact" value={data.contact} />
+      </FieldGrid>
+
+      <AiAssistant node={data} />
     </div>
-  )
+  );
 }

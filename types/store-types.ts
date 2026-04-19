@@ -15,8 +15,10 @@ export interface DynamicNodesSlice {
 export interface AiSlice {
   aiLoadingNodeTitle: string | null;
   aiResponseMap: Record<string, string>;
+  aiErrorMap: Record<string, string>;
   setAiLoading: (nodeTitle: string | null) => void;
   setAiResponse: (nodeTitle: string, response: string) => void;
+  setAiError: (nodeTitle: string, error: string) => void;
 }
 
 export interface ClaimSlice {

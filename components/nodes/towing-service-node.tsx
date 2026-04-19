@@ -1,15 +1,20 @@
-import { TowingServiceNode } from "@/types"
-import { FieldItem } from "@/components/shared"
+import { TowingServiceNode } from "@/types";
+
+import { FieldGrid, FieldItem, AiAssistant } from "@/components/shared";
 
 type TowingServiceNodeProps = {
-  data: TowingServiceNode
-}
+  data: TowingServiceNode;
+};
 
 export function TowingServiceNodeComponent({ data }: TowingServiceNodeProps) {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <FieldItem label="Pickup Location" value={data.pickupLocation} />
-      <FieldItem label="Towing Date" value={data.towingDate} />
+    <div className="space-y-4">
+      <FieldGrid>
+        <FieldItem label="Pickup Location" value={data.pickupLocation} />
+        <FieldItem label="Towing Date" value={data.towingDate} />
+      </FieldGrid>
+
+      <AiAssistant node={data} />
     </div>
-  )
+  );
 }
